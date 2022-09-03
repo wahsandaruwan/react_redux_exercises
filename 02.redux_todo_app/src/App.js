@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Todo from './Components/Todo'
 
 // Load todos from local storage
@@ -17,6 +18,10 @@ const App = () => {
   const [todos, setTodos] = useState(loadTodos())
   const [edit, setEdit] = useState(false)
   const [editTodoId, setEditTodoId] = useState('')
+
+  // Redux variables
+  const TODOS = useSelector((state) => state)
+  const DISPATCH = useDispatch()
 
   // Store todo to local storage
   useEffect(() => {
@@ -87,12 +92,12 @@ const App = () => {
       </button>
       <br />
       <br />
-      {todos?.map((todo, index) => {
-        const { todoName, dateTime } = todo
+      {TODOS?.map((todo, index) => {
+        const { id, todoName, dateTime } = todo
         return (
           <Todo
             key={Math.random()}
-            id={index}
+            id={id}
             todoName={todoName}
             dateTime={dateTime}
             editFunc={editTodo}

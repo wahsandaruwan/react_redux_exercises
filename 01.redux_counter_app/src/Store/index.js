@@ -15,9 +15,9 @@ const reducerFunction = (state = { counter: 0 }, action) => {
     return { counter: counter + action.payload }
   } else if (action.type === 'ADA') {
     return { counter: counter + action.payload }
+  } else{
+    return state
   }
-
-  return state
 }
 
 const store = createStore(reducerFunction)

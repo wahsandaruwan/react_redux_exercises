@@ -26,7 +26,7 @@ const App = () => {
       <button onClick={decrement}>Decrement</button>
       <button onClick={addBy}>Add by 5</button>
       <br />
-      <input type="text" onChange={(e) => setValue(parseInt(e.target.value))} />
+      <input type="number" onChange={(e) => setValue(parseInt(e.target.value))} />
       <br />
       <button onClick={addAny}>Add Any</button>
     </>
