@@ -1,3 +1,4 @@
+// Sample state
 export let todos = [
   {
     id: 1,
